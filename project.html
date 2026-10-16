@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HOME FOR HOPE SOUP KITCHEN AND DAY CARE | Home</title>
+<meta name="description" content="HOME FOR HOPE SOUP KITCHEN AND DAY CARE — warm, home-style soups made fresh daily and delivered with care." />
+<style>
+  :root {
+    --color-primary: #1d4ed8;
+    --color-primary-dark: #1e3a8a;
+    --color-secondary: #f59e0b;
+    --color-text: #111827;
+    --color-text-light: #374151;
+    --color-bg: #ffffff;
+    --color-bg-alt: #f8fafc;
+    --color-border: #dbe3ee;
+    --font-heading: "Segoe UI", "Trebuchet MS", Arial, sans-serif;
+    --font-body: "Segoe UI", "Trebuchet MS", Arial, sans-serif;
+    --max-width: 1100px;
+    --radius: 10px;
+    --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.08);
+  }
+ 
+  * { box-sizing: border-box; }
+  html { font-size: 16px; }
+  img { max-width: 100%; display: block; }
+
+.content-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+}
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 1.02rem;
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.75;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+ 
+  body {
+    background-image: linear-gradient(
+  rgba(119, 124, 112, 0.30),
+  rgba(172, 189, 175, 0.28)
+), url('logo.png');
+    background-repeat: no-repeat;
+    background-position: center 90px;
+    background-size: 2500px auto;
+    background-attachment: fixed;
+  }
+ 
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    color: var(--color-text);
+    margin: 0 0 0.8rem;
+    letter-spacing: 0.01em;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #0f172a;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 2vw, 2.2rem);
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+
+  p {
+    margin: 0 0 1rem;
+    color: var(--color-text-light);
+    font-size: 1.02rem;
+  }
+ 
+  a { color: var(--color-primary); text-decoration: none; }
+  a:hover, a:focus {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+  img { max-width: 100%; display: block; }
+ 
+  .container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+ 
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+ 
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--color-primary);
+    color: #db1010;
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+  }
+  .skip-link:focus { left: 1rem; top: 1rem; }
+ 
+  /* Header / Nav */
+  .site-header {
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    background: var(--color-bg);
+    z-index: 100;
+  }
+ 
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 0.5rem 1.25rem;
+    max-width: var(--max-width);
+    min-height: 110px;
+    margin: 0 auto;
+     .nav__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--color-text);
+    font-size: 1.35rem;
+    font-weight: 700;
+    font-style: italic;
+    white-space: nowrap; 
+  }
+
+  .nav__logo img {
+    display: block;
+    width: 220px;
+    height: auto;
+    max-width: none;
+  }
+  }
+ 
+  .nav__logo {.nav__logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-text);
+  font-style: italic;
+}  }
+ 
+  .nav__toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 0.4rem 0.6rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+ 
+  .nav__list {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+ 
+  .nav__list a {
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 0.98rem;
+    letter-spacing: 0.01em;
+  }
+  .nav__list a.is-active {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+  }
+ 
+  @media (max-width: 720px) {
+    .nav__toggle { display: inline-block; }
+    .nav__list {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      gap: 0;
+      padding: 0.5rem 1.25rem 1rem;
+    }
+    .nav__list.is-open { display: flex; }
+    .nav__list li { border-top: 1px solid var(--color-border); }
+    .nav__list a { display: block; padding: 0.75rem 0; }
+  }
+ 
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  .btn--primary { background: var(--color-primary); color: #fff; }
+  .btn--primary:hover, .btn--primary:focus {
+    background: var(--color-primary-dark);
+    text-decoration: none;
+  }
+ 
+  /* Hero */
+  .hero { padding: 4rem 0; background: var(--color-bg-alt); text-align: center; }
+  .hero h1 { font-size: clamp(1.75rem, 4vw, 2.75rem); margin-bottom: 1rem; }
+  .hero p { max-width: 640px; margin: 0 auto 1.5rem; color: var(--color-text-light); }
+ 
+  /* Sections */
+  .section { padding: 3rem 0; }
+  .section--alt { background: var(--color-bg-alt); }
+  .section--divider { border-top: 1px solid var(--color-border); }
+ 
+    .grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .photo-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    margin-top: 1.5rem;
+  }
+
+  .photo-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    background: #f3f4f6;
+  }
+
+  #services .grid {
+    align-items: start;
+  }
+
+  #services .grid > .card {
+    align-self: start;
+    height: auto;
+  }
+
+  .card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .card h3,
+  .card p {
+    color: #1f2937;
+  }
+    
+}
+  }
+ 
+  /* Forms */
+  .form-group { margin-bottom: 1.25rem; }
+  label { display: block; font-weight: 600; margin-bottom: 0.35rem; }
+ 
+  input, textarea, select {
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 1rem;
+  }
+ 
+  input:focus, textarea:focus, select:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 1px;
+  }
+ 
+  .error-message {
+    color: #b91c1c;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none;
+  }
+ 
+  .form-group.has-error .error-message { display: block; }
+  .form-group.has-error input,
+  .form-group.has-error textarea { border-color: #b91c1c; }
+ 
+  .form-success {
+    display: none;
+    background: #ecfdf5;
+    border: 1px solid #10b981;
+    color: #065f46;
+    padding: 1rem;
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+  }
+  .form-success.is-visible { display: block; }
+ 
+  address { font-style: normal; }
+ 
+  /* Footer */
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    padding: 2rem 0;
+    margin-top: 3rem;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    text-align: center;
+  
+  }
+</style>
+</head>
+<body>
+ 
+<a class="skip-link" href="#main-content">Skip to main content</a>
+ 
+<header class="site-header">
+<nav class="nav" aria-label="Main navigation">
+<a href="#home" class="nav__logo">
+  <img src="logo.png" alt="Home for Hope logo" /> 
+  <span></span>
+</a>
+ 
+    <button class="nav__toggle" aria-expanded="false" aria-controls="primary-menu">
+&#9776; <span class="sr-only">Menu</span>
+</button>
+ 
+    <ul class="nav__list" id="primary-menu">
+<li><a href="#home" data-nav="home" class="is-active">Home</a></li>
+<li><a href="#about" data-nav="about">About</a></li>
+<li><a href="#services" data-nav="services">Services</a></li>
+<li><a href="#contact" data-nav="contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+ 
+<main id="main-content">
+ 
+  <!-- ============ HOME ============ -->
+<section id="home" class="hero">
+<div class="container">
+<h1>SOUP KITCHEN AND DAY CARE</h1>
+<p>Welcome to our community hub where families can find support, nourishment, and a safe space for all ages.</p>
+<a href="#contact" class="btn btn--primary">Get in touch</a>
+</div>
+</section>
+ 
+  <section class="section" aria-labelledby="highlights-heading">
+<div class="container">
+<h2 id="highlights-heading">Why choose us</h2>
+<div class="grid">
+<div class="card">
+<h3>All-in-Family Care:</h3>
+<p>We uniquely combine a warm soup kitchen and a trusted day care under one roof, supporting every generation.</p>
+</div>
+<div class="card">
+<h3>A Truly Safe Space:</h3>
+<p>From our loving childcare environment to our welcoming dining room, safety and respect come first.</p>
+</div>
+<div class="card">
+<h3>Heart-Led Service:</h3>
+<p>Everything we do is driven by genuine compassion and a deep commitment to our local neighborhood.</p>
+</div>
+</div>
+</div>
+</section>
+ 
+  <!-- ============ ABOUT ============ -->
+<section id="about" class="section section--alt section--divider" aria-labelledby="about-heading">
+<div class="container">
+<h1 id="about-heading">About </h1>
+<p>We care for your children and feed our community, offering a warm meal and a safe space for all.</p>
+ 
+      <h2>Our story</h2>
+<p>The Heart Behind Our Doors Every great mission starts with a response to a need. For us, it started when we saw families stretching themselves too thin just to make ends meet. We wanted to build a sanctuary where parents could find peace of mind knowing their children were safe, loved, and learning, while also ensuring that anyone walking by could count on a hot, comforting meal. That vision grew into the soup kitchen and day care you see today—a home away from home for our entire community.</p>
+ 
+      <h2>What we stand for</h2>
+<div class="grid">
+<div class="card">
+<h3>COMMUNITY: </h3>
+<p>We are a welcoming home where neighbors support neighbors, building a strong family-like bond.</p>
+</div>
+<div class="card">
+<h3>SAFETY: </h3>
+<p>We provide a secure, trusted, and nurturing environment for both the children in our care and our guests.</p>
+</div>
+<div class="card">
+<h3>QUALITY: </h3>
+<p>We are committed to providing the highest quality meals and care for all our guests.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+<section class="section section--alt" aria-labelledby="gallery-heading">
+  <div class="container">
+    <h2 id="gallery-heading">Our community in action</h2>
+    <div class="photo-grid">
+      <img src="Image 1.png" alt="Soup kitchen meal being prepared for the community" />
+      <img src="Image 2.png" alt="Children enjoying care and learning at the day care" />
+      <img src="image 3.png" alt="Warm community meal served with care" />
+      <img src="image 4.png" alt="Supportive family-focused care environment" />
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="section section--divider" aria-labelledby="services-heading">
+  <div class="container">
+    <h1 id="services-heading">Services</h1>
+    <p>We provide a loving day care and a warm soup kitchen, nourishing our community with homegrown garden meals.</p>
+
+    <div class="grid">
+      <article class="card">
+        <h3>Soup Kitchen &amp; Community Dining</h3>
+        <p>We provide a safe, loving day care for your children and a welcoming soup kitchen for our community.</p>
+        <a href="#contact">Enquire &rarr;</a>
+      </article>
+
+      <article class="card">
+        <h3>Day Care &amp; Early Childhood Care</h3>
+        <p>A safe and nurturing environment for children's development and learning.</p>
+        <a href="#contact">Enquire &rarr;</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DONATIONS ============ -->
+<section id="donations" class="section section--alt section--divider" aria-labelledby="donations-heading">
+  <div class="container">
+    <h1 id="donations-heading">Donations</h1>
+    <p>Your support helps us care for children and nourish families in our community.</p>
+
+    <div class="grid">
+      <article class="card">
+        <h3>Donate Money</h3>
+        <p>Financial gifts help provide meals, care, and essential supplies.</p>
+        <a href="mailto:pumzagobingca@gmail.com?subject=Money%20Donation" class="btn btn--primary">
+          Donate money
+        </a>
+      </article>
+
+      <article class="card">
+        <h3>Donate Clothes</h3>
+        <p>Give clean, gently used clothing to children and families in need.</p>
+        <p>Drop off items at 25 Nkqubela Street, KwaNokuthula.</p>
+        <a href="tel:+27638407154" class="btn btn--primary">Arrange drop-off</a>
+      </article>
+
+      <article class="card">
+        <h3>Donate Food Parcels</h3>
+        <p>Food parcels help provide nutritious meals to local families.</p>
+        <p>Contact us to arrange a donation or delivery.</p>
+        <a href="mailto:pumzagobingca@gmail.com?subject=Food%20Parcel%20Donation" class="btn btn--primary">
+          Donate food
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
+/>
+
+
+        
+  <!-- ============ CONTACT ============ -->
+<section id="contact" class="section section--alt section--divider" aria-labelledby="contact-heading">
+<div class="container">
+<h1 id="contact-heading">Get In Touch</h1>
+<p>Our doors and hearts are always open—get in touch with us today, and we promise to reply within 24 hours.</p>
+has context menu</p>
+ 
+      <div id="form-success" class="form-success" role="status"></div>
+ 
+      <form id="contact-form" novalidate>
+<div class="form-group">
+<label for="name">Full name</label>
+<input type="text" id="name" name="name" autocomplete="name" required />
+<p class="error-message" role="alert"></p>
+</div>
+ 
+        <div class="form-group">
+<label for="email">Email address</label>
+<input type="email" id="email" name="email" autocomplete="email" required />
+<p class="error-message" role="alert"></p>
+</div>
+ 
+        <div class="form-group">
+<label for="message">Message</label>
+<textarea id="message" name="message" rows="5" required></textarea>
+<p class="error-message" role="alert"></p>
+</div>
+ 
+        <button type="submit" class="btn btn--primary">Send message</button>
+</form>
+ 
+      <address>
+<h2>Other ways to reach us</h2>
+<p>Email: <a href="mailto:homeforhope67@gmail.com">homeforhope67@gmail.com</a></p>
+<p>Phone: <a href="tel:+27638407154">++27638407154</a></p>
+<p>25 Nkqubela Street,KwaNokuthula, PLettenberg Bay 6600</p>
+</address>
+</div>
+</section>
+ 
+     
+    </div>
+  </div>
+</section>
+</main>
+ 
+<footer class="site-footer">
+<div class="container">
+<p>&copy; <span id="year"></span> The Soup Kitchen. All rights reserved.</p>
+</div>
+</footer>
+ 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("year").textContent = new Date().getFullYear();
+    initNavToggle();
+    initActiveLinkOnScroll();
+    initContactForm();
+  });
+ 
+  /* Mobile nav toggle */
+  function initNavToggle() {
+    const toggle = document.querySelector(".nav__toggle");
+    const list = document.querySelector(".nav__list");
+    if (!toggle || !list) return;
+ 
+    toggle.addEventListener("click", () => {
+      const isOpen = list.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", isOpen);
+    });
+ 
+    // Close menu after clicking a link (mobile)
+    list.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        list.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+ 
+  /* Highlight nav link for section in view */
+  function initActiveLinkOnScroll() {
+    const sections = document.querySelectorAll("main section[id]");
+    const navLinks = document.querySelectorAll(".nav__list a[data-nav]");
+    if (!sections.length || !navLinks.length) return;
+ 
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            navLinks.forEach((link) => link.classList.remove("is-active"));
+            const activeLink = document.querySelector(`.nav__list a[data-nav="${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add("is-active");
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+ 
+    sections.forEach((section) => observer.observe(section));
+  }
+ 
+  /* Contact form validation */
+  function initContactForm() {
+    const form = document.getElementById("contact-form");
+    if (!form) return;
+ 
+    const successBox = document.getElementById("form-success");
+ 
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+ 
+      const fields = [
+        { id: "name", validator: (v) => v.trim().length > 1, message: "Please enter your name." },
+        { id: "email", validator: isValidEmail, message: "Please enter a valid email address." },
+        { id: "message", validator: (v) => v.trim().length > 9, message: "Message must be at least 10 characters." },
+      ];
+ 
+      let isValid = true;
+ 
+      fields.forEach(({ id, validator, message }) => {
+        const input = document.getElementById(id);
+        if (!input) return;
+ 
+        const group = input.closest(".form-group");
+        const errorEl = group.querySelector(".error-message");
+        const valid = validator(input.value);
+ 
+        if (!valid) {
+          isValid = false;
+          group.classList.add("has-error");
+          if (errorEl) errorEl.textContent = message;
+        } else {
+          group.classList.remove("has-error");
+        }
+      });
+ 
+      if (isValid) {
+        // TODO: replace with a real submission (fetch to your backend / form service)
+        form.reset();
+        if (successBox) {
+          successBox.classList.add("is-visible");
+          successBox.textContent = "Thanks! Your message has been sent.";
+        }
+      } else if (successBox) {
+        successBox.classList.remove("is-visible");
+      }
+    });
+  }
+ 
+  function isValidEmail(value) {
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return pattern.test(value.trim());
+  }
+</script>
+ 
+</body>
+</html>
+
+
+
+  
